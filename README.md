@@ -6,8 +6,7 @@ This repo will help to integrated shiprocket with React / React native.
 
 # Installation
 
-`yarn add shiprocket`
-`npm i shiprocket --save`
+`yarn add shiprocket`  or  `npm i shiprocket --save`
 
 
 THen... 
