@@ -1,5 +1,20 @@
-function tracking(options) {
-  console.log(options);
+const Utils = require('./utils')
+
+
+//// Tracking
+function Tracking(options) {
+  console.log('tracking')
 }
 
-module.exports.tracking = tracking;
+
+
+
+///  PickupAddress 
+function PickupAddress(options) {
+  // console.log('pin code ')
+  Utils.GetToken()
+
+
+}
+
+module.exports = {Tracking,PickupAddress};
