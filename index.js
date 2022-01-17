@@ -45,7 +45,8 @@ async function Tracking_OrderId({ auth, params }) {
     return trackingDetails;
   } catch (err) {
     console.log(err);
-    return err;
+    const status  = err.response.status
+    return status
   }
 }
 
@@ -88,7 +89,8 @@ async function CourierServiceability({ auth, params }) {
     return estimatedDate;
   } catch (err) {
     console.log(err);
-    return err;
+    const status  = err.response.status
+    return status
   }
 }
 
