@@ -50,6 +50,10 @@ async function Tracking_OrderId({ auth, params }) {
   }
 }
 
+
+
+
+
 ///  Check Courier Serviceability
 async function CourierServiceability({ auth, params }) {
   if (!auth.email && !auth.password && !auth.token) {
@@ -79,11 +83,15 @@ async function CourierServiceability({ auth, params }) {
 
   try {
     const response = await axios(requestOptions);
-    if (response.status == "422") {
+    if (response.data.status == "422") {
       const errorMessage = "Invalid Pincode";
       return errorMessage;
     }
-
+    if (response.data.status == "404") {
+      const errorMessage = response.data.message;
+      return errorMessage;
+    }
+    
     const json = response.data;
     const estimatedDate = json.data.available_courier_companies[0].etd;
     return estimatedDate;
