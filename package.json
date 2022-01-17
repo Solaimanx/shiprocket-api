@@ -1,6 +1,6 @@
 {
   "name": "shiprocket-api",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Shiprocket api for react , react native and node js",
   "main": "index.js",
   "scripts": {

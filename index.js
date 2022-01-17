@@ -7,7 +7,7 @@ async function GetToken({ email, password }) {
   return token;
 }
 
-//// Get Tracking Data through Order iD
+//// Get Tracking Data through Order ID
 async function Tracking_OrderId({ auth, params }) {
   if (!auth.email && !auth.password && !auth.token) {
     return console.log("pass the valid props");

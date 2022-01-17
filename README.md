@@ -14,12 +14,17 @@ This repo will help to integrated shiprocket with React / React native / Node js
 Then... 
 
 ```
-import { CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
+import { GetToken, CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
 
 
-//example 1
+///  Get Token
+const token = await GetToken({
+      email : 'example@email.com',
+      password: 'password',
+    })
 
-    const responseC = await CourierServiceability({
+///  Check Courier Serviceability
+    const response = await CourierServiceability({
 
     auth: {
             email : 'example@email.com',
@@ -33,9 +38,8 @@ import { CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
     }
 })
     
-//example 2
-
-    const responseT = await Tracking_OrderId({
+//// Get Tracking Data through Order ID
+    const response = await Tracking_OrderId({
         auth: {
             email : 'example@email.com',
             password: 'password',
@@ -53,7 +57,7 @@ shiprocket supports 2 options , both of which are required
 
 
 
-auth option : 
+auth option: 
 * *email*  _(required if you don't provide direct token)_
 * *password* _(required if you don't provide direct token)_
 * *token* _(Bearer token for authentication)_ 
