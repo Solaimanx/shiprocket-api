@@ -1,11 +1,8 @@
-# IT'S NOT YET READY FOR USE ( WILL PUSH WORKING CODE WITHIN THIS WEEK)
-
-
 # What is this ? 
 
 
 
-This repo will help to integrated shiprocket with React / React native. 
+This repo will help to integrated shiprocket with React / React native / Node js  
 
 
 
@@ -14,14 +11,43 @@ This repo will help to integrated shiprocket with React / React native.
 `yarn add shiprocket-api`  or  `npm i shiprocket-api --save`
 
 
-THen... 
+Then... 
 
 ```
-import { Tracking , PickupAddress } from 'shiprocket-api'
+import { CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
 
-const options = { 
 
-}
+
+
+    const responseC = await CourierServiceability({
+
+    auth: {
+            email : 'example@email.com',
+            password: 'password',
+        },
+    params: {
+        pickup_postcode : 600000,
+        delivery_postcode : 600005,
+        weight: 2,
+        cod : 1
+    }
+})
+
+
+    
+    const responseT = await Tracking_OrderId({
+        auth: {
+            email : 'example@email.com',
+            password: 'password',
+        },
+        params: {
+            order_id : '55097',
+        }
+    })
+    
+
+
+
 
 ```
 
@@ -30,8 +56,16 @@ const options = {
 
 shiprocket supports 2 options , both of which are required 
 
-* *url*  _(end point)_
-* *token* _authorized token_
+
+
+auth option : 
+* *email*  _(required if you don't provide direct token)_
+* *password* _(required if you don't provide direct token)_
+* *token* _(Bearer token for authentication)_ 
+
+params : 
+* *neccsary params  *  _(you can find the parameters list in their offical documentation)_
+
 
 
 # Docs
