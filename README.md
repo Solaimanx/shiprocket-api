@@ -17,7 +17,7 @@ Then...
 import { CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
 
 
-
+//example 1
 
     const responseC = await CourierServiceability({
 
@@ -32,9 +32,9 @@ import { CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
         cod : 1
     }
 })
-
-
     
+//example 2
+
     const responseT = await Tracking_OrderId({
         auth: {
             email : 'example@email.com',
@@ -44,11 +44,6 @@ import { CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
             order_id : '55097',
         }
     })
-    
-
-
-
-
 ```
 
 
@@ -63,8 +58,8 @@ auth option :
 * *password* _(required if you don't provide direct token)_
 * *token* _(Bearer token for authentication)_ 
 
-params : 
-* *neccsary params  *  _(you can find the parameters list in their offical documentation)_
+params option: 
+* *necessary parameters  *  _(you can find the parameters list in their offical documentation)_
 
 
 
